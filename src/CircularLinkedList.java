@@ -136,7 +136,16 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	   public Iterator<T> iterator() { return new ListIterator(); } // TODO
 
 	   // an iterator, doesn't implement remove() since it's optional 
-	   private class ListIterator implements Iterator<T> { 
+	   private class ListIterator implements Iterator<T> {
+		   private Node<T> act=last;
+		   public boolean hasNext(){ return act !=null;}
+		   public T next(){
+			   if(!hasNext()) throw new NoSuchElementException();
+			   T item= act.data;
+			   act=act.next;
+			   return item;
+		   }
+		   // TODO remove
 
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 
