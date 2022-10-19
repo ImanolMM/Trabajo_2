@@ -6,10 +6,14 @@ public class PruebaCircularLinkedList {
 	public static void visualizarNodos(UnorderedCircularLinkedList<Integer> l) {
 		Iterator<Integer> it = l.iterator();
 		System.out.println();
-		while (it.hasNext()) {
+		Node act = l.last.next;
+		while (act != l.last) {
 			Integer num = it.next();
 			System.out.println(num);
+			act = act.next;
 		}
+		Integer num = it.next();
+		System.out.println(num);
 	}
 	
 	
@@ -24,18 +28,18 @@ public class PruebaCircularLinkedList {
 		l.addToRear(0);
 		l.addToRear(20);
 		l.addToFront(8);
-		l.remove(new Integer(7));
+		l.remove(7);
 
 		
 		System.out.print(" Lista ...............");
 		visualizarNodos(l);
 		System.out.println(" Num elementos: " + l.size());
-				
-		
+
+
 		System.out.println("Prueba Find ...............");
 		System.out.println("9? " + l.find(9));
 		System.out.println("0? " + l.find(0));
 		System.out.println("7? " + l.find(7));
 		
-}
+	}
 }
