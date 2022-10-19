@@ -78,7 +78,6 @@ public class CircularLinkedList<T> implements ListADT<T> {
 				ant = act;
 				act = act.next;
 			}
-			count --;
 		}
 		return t;
 	}
@@ -100,14 +99,12 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	public boolean contains(T elem) {
 		boolean encontrado = false;
 		Node act = this.last;
-
 		if (this.last != null){
 			act = act.next;
-			while  (act != this.last && !encontrado){
+			while  (act != this.last){
 				if (act.data == elem){
 					encontrado = true;
 				}
-				act = act.next;
 			}
 		}
 		return encontrado;
@@ -136,18 +133,19 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	{ return count;};
 	
 	/** Return an iterator to the stack that iterates through the items . */ 
-	   public Iterator<T> iterator() { return new ListIterator(); }
+	   public Iterator<T> iterator() { return new ListIterator(); } // TODO
 
 	   // an iterator, doesn't implement remove() since it's optional 
 	   private class ListIterator implements Iterator<T> {
-		   private Node<T> act = last.next;
-		   public boolean hasNext(){ return act.next != last;}
+		   private Node<T> act=last;
+		   public boolean hasNext(){ return act !=null;}
 		   public T next(){
+			   if(!hasNext()) throw new NoSuchElementException();
 			   T item= act.data;
 			   act=act.next;
 			   return item;
 		   }
-		   //Coste lineal (O(1))
+		   // TODO remove
 
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 
