@@ -16,26 +16,19 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 	}//coste lineal (O(1))
 
 	public void addToRear(T elem) {
-	// a�ade un elemento al final 
-		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
-		Node act;
-		Node <T> nuevo = new Node<>(elem);
-		if (last != null){
-			act = last.next;
-
-			while (act != last){
-				act = act.next;
-			}
-			nuevo.next = last.next;
-			last.next = nuevo;
-			last = nuevo;
-			count ++;
-		} else{
-			last = nuevo;
-			last.next = nuevo;
+		Node<T> nuevo=new Node<>(elem);
+		if(last == null){
+			last=nuevo;
+			nuevo.next=nuevo;
 			count++;
 		}
-	}//coste O(n)
+		else {
+			nuevo.next = last.next;
+			last.next=nuevo;
+			last = nuevo;
+			count++;
+		}
+	}//coste O(1)
 	
 	public void addAfter(T elem, T target) {
 	// A�ade elem detr�s de otro elemento concreto, target,  que ya se encuentra en la lista

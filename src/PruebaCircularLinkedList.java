@@ -7,7 +7,7 @@ public class PruebaCircularLinkedList {
 		Iterator<Integer> it = l.iterator();
 		System.out.println();
 		Node act = l.last.next;
-		while (act != l.last) {
+		while (it.hasNext()) {
 			Integer num = it.next();
 			System.out.println(num);
 			act = act.next;
