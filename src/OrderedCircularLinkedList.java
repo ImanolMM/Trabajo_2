@@ -1,6 +1,6 @@
 public class OrderedCircularLinkedList<T extends Comparable<T>> extends CircularLinkedList<T> implements OrderedListADT<T>{
 	
-	public void add(T elem){ //TODO preguntar si hay que hacer un CompareTo o si van a ser siempre numeros
+	public void add(T elem){
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
 		Node act = last;
 		Node ant = last;
