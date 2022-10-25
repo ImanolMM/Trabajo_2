@@ -8,7 +8,7 @@ public class OrderedCircularLinkedList<T extends Comparable<T>> extends Circular
 		boolean añadido = false;
 		if (last != null){
 			act = last.next;
-			while (act != last && !añadido){
+			while (act != last && !añadido){ // no lo va a hacer porque cuando hay un elemento act = last
 				if (elem.compareTo(act.data) < 0 ){
 					if (act == last.next){
 						nuevo.next = act;
