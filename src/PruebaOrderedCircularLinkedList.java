@@ -10,8 +10,7 @@ public class PruebaOrderedCircularLinkedList {
 			l.add(9);
 			l.add(0);
 			l.add(20);
-			l.remove(new Integer(7));
-
+			l.remove(7);
 			
 			System.out.print(" Lista ...............");
 			l.visualizarNodos();
