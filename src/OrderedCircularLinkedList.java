@@ -14,7 +14,6 @@ public class OrderedCircularLinkedList<T extends Comparable<T>> extends Circular
 					if (act == last.next){
 						nuevo.next = act;
 						last.next = nuevo;
-						last = nuevo;
 
 					}else{
 						nuevo.next = act;

@@ -15,8 +15,7 @@ public class PruebaOrderedCircularLinkedList {
 			System.out.print(" Lista ...............");
 			l.visualizarNodos();
 			System.out.println(" Num elementos: " + l.size());
-					
-			
+
 			System.out.println("Prueba Find ...............");
 			System.out.println("20? " + l.find(20));
 			System.out.println("9? " + l.find(9));
