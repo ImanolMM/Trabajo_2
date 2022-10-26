@@ -1,4 +1,4 @@
-public class OrderedCircularLinkedList<T extends Comparable<T>> extends CircularLinkedList<T> implements OrderedListADT<T>{
+public class OrderedCircularLinkedList<T extends Comparable<T>> extends CircularLinkedList<T> implements OrderedListADT<T> {
 	
 	public void add(T elem){
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
@@ -10,7 +10,7 @@ public class OrderedCircularLinkedList<T extends Comparable<T>> extends Circular
 		if (last != null){
 			act = last.next;
 			while (!añadido){ // no lo va a hacer porque cuando hay un elemento act = last
-				if (elem.compareTo(act.data) < 0 ){
+				if (elem.compareTo(act.data) < 0){
 					if (act == last.next){
 						nuevo.next = act;
 						last.next = nuevo;
