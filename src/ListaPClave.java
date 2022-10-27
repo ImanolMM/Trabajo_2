@@ -14,7 +14,28 @@ public class ListaPClave extends UnorderedCircularLinkedList<PClave>{
     public int obtenerNumPalabras (){
         return this.count;
     }
+    public void quitarPalabra (String nom){
+        Node <PClave> act = last;
+        Node <PClave> ant = last;
+        boolean quitado = false;
 
+        if (last != null){
+            act = act.next;
+            while (act != last && !quitado){
+                if (act.data.obtenerNombrePalabra().equals(nom)){
+                    if (act == last){
+                        ant.next = act.next;
+                        last = ant;
+                    }else{
+                        ant.next = act.next;
+                    }
+                }else{
+                    ant = act;
+                    act = act.next;
+                }
+            }
+        }
+    }
     public PClave obtenerPalabraPorPos (int pos){
         //precondición: la posición es válida
         Node <PClave> act = last.next;
