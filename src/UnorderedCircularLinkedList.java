@@ -1,5 +1,10 @@
 public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implements UnorderedListADT<T> {
-	
+
+	public UnorderedCircularLinkedList (){
+		last = null;
+		descr = "";
+		count = 0;
+	}
 	public void addToFront(T elem) {
 	// a�ade un elemento al comienzo
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
