@@ -104,11 +104,12 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		if (this.last != null){
 			act = act.next;
 			while  (act != this.last && !encontrado){
-				if (act.data == elem){
+				if (act.data.equals(elem)){
 					encontrado = true;
 				}
 				act = act.next;
 			}
+			if (last.data.equals(elem)){encontrado = true;}
 		}
 		return encontrado;
 	}
