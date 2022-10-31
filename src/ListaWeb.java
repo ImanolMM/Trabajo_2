@@ -14,9 +14,7 @@ public class ListaWeb extends UnorderedCircularLinkedList<Web>{
         return this.count;
     }
 
-    public void añadirWeb (Web web) {
-            this.addToRear(web);
-    }
+    public void añadirWeb (Web web) {this.addToRear(web);}
 
     public Web devolverWebPorPos (int pos){
         Node <Web> act = last.next;
@@ -33,11 +31,15 @@ public class ListaWeb extends UnorderedCircularLinkedList<Web>{
 
         if (last != null){
             act = act.next;
+            if (act == last && act.data.obtenerId()==id){
+                last = null;
+                count=0;
             while (act != last && !quitado){
                 if (act.data.obtenerId() == id){
                     if (act == last){
                         ant.next = act.next;
                         last = ant;
+                        count--;
                     }else{
                         ant.next = act.next;
                     }
@@ -46,18 +48,6 @@ public class ListaWeb extends UnorderedCircularLinkedList<Web>{
                     act = act.next;
                 }
             }
-        }
-    }
-
-    public void añadirWebYAlArchivo (Web web){
-        this.añadirWeb(web);
-        try(FileWriter fw = new FileWriter(System.getProperty("user.dir")+"\\src\\index-2022-2023", true);
-            PrintWriter out = new PrintWriter(fw))
-        {
-            out.println();
-            out.print(web.obtenerId() + ":"+ web.obtenerNombre());
-        } catch (IOException e){
-
         }
     }
     
