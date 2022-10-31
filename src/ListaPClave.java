@@ -21,17 +21,23 @@ public class ListaPClave extends UnorderedCircularLinkedList<PClave>{
 
         if (last != null){
             act = act.next;
-            while (act != last && !quitado){
-                if (act.data.obtenerNombrePalabra().equals(nom)){
-                    if (act == last){
-                        ant.next = act.next;
-                        last = ant;
+            if (act==last && act.data.obtenerNombrePalabra().equals(nom)){
+                last=null;
+                count=0;
+            }
+            else{
+                while (act != last && !quitado){
+                    if (act.data.obtenerNombrePalabra().equals(nom)){
+                        if (act == last){
+                            ant.next = act.next;
+                            last = ant;
+                        }else{
+                            ant.next = act.next;
+                        }
                     }else{
-                        ant.next = act.next;
+                        ant = act;
+                        act = act.next;
                     }
-                }else{
-                    ant = act;
-                    act = act.next;
                 }
             }
         }

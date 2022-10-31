@@ -3,6 +3,8 @@ import org.junit.Before;
 import org.junit.After;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class ListaWebTest {
 
     private ListaWeb l1;
@@ -49,5 +51,10 @@ public class ListaWebTest {
 
     @org.junit.Test
     public void obtenerArray() {
+        ArrayList<Web> lista=new ArrayList<>();
+        lista.add(web1);
+        lista.add(web2);
+        l1.añadirWeb(web2);
+        assertEquals(l1.obtenerArray(),lista);
     }
 }

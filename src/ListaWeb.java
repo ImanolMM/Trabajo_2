@@ -36,6 +36,9 @@ public class ListaWeb extends UnorderedCircularLinkedList<Web> {
             if (act == last && act.data.obtenerId() == id) {
                 last = null;
                 count = 0;
+            }
+            else
+            {
                 while (act != last && !quitado) {
                     if (act.data.obtenerId() == id) {
                         if (act == last) {
