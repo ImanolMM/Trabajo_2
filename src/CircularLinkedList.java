@@ -118,13 +118,32 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	public T find(T elem) { //TODO preguntar si hay que devolver la posi o el elemento
 	//Determina si la lista contiene un elemento concreto, y develve su referencia, null en caso de que no est�
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
-		boolean encontrado = this.contains(elem);
-		if (encontrado){
-			return elem;
+		boolean enc=false;
+		Node<T> act=last;
+		Node<T> ant=last;
+		if (last!=null){
+			if (act.data==elem){
+				enc=true;
+				return ant.data;
+			}
+			else{
+				act=act.next;
+				while (act!=last && enc==false){
+					if (act.data==elem){
+						enc=true;
+						return ant.data;
+					}
+					else{
+						ant=act;
+						act=act.next;
+					}
+				}
+				if (enc==false){
+					ant=null;
+				}
+			}
 		}
-		else{
-			return null;
-		}
+		return ant.data;
 	}
 	//coste: O(n)
 
