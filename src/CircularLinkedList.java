@@ -139,7 +139,7 @@ public class CircularLinkedList<T> implements ListADT<T> {
 					}
 				}
 				if (enc==false){
-					ant=null;
+					return null;
 				}
 			}
 		}
