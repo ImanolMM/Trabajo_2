@@ -18,7 +18,7 @@ public class PruebaCircularLinkedList {
 	
 	
 	public static void main(String[] args)  {
-		
+
 		UnorderedCircularLinkedList<Integer> l = new UnorderedCircularLinkedList<Integer>();
 		l.addToRear(1);
 		l.addToRear(3);

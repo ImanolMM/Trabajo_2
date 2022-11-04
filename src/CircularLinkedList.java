@@ -114,7 +114,7 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		return encontrado;
 	}
 	// coste: O (n)
-
+//h
 	public T find(T elem) { //TODO preguntar si hay que devolver la posi o el elemento
 	//Determina si la lista contiene un elemento concreto, y develve su referencia, null en caso de que no est�
 		// COMPLETAR EL CODIGO Y CALCULAR EL COSTE
